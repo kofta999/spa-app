@@ -1,0 +1,203 @@
+.dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 40px 80px;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.page-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+}
+.page-title {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.dash-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade8088;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.status-text { color: #4ade80; }
+
+/* Metrics */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.metric-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 24px 20px;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.metric-value { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+.metric-delta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.metric-delta.up { color: #4ade80; }
+.metric-delta.down { color: #f87171; }
+
+/* Tabs */
+.dash-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.tab-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition);
+}
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--accent); }
+.tab-btn.active::after { transform: scaleX(1); }
+
+/* Chart */
+.chart-section {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+.chart-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 180px;
+  padding-bottom: 28px;
+  position: relative;
+}
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  gap: 6px;
+}
+.bar {
+  width: 100%;
+  background: var(--accent);
+  opacity: 0.7;
+  border-radius: 2px 2px 0 0;
+  transition: opacity var(--transition);
+  min-height: 4px;
+}
+.bar:hover { opacity: 1; }
+.bar-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  position: absolute;
+  bottom: 0;
+}
+
+/* Buckets */
+.buckets-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.buckets-table th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 8px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.buckets-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.buckets-table tr:last-child td { border-bottom: none; }
+.buckets-table tr:hover td { background: var(--bg3); }
+.bucket-name {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+}
+.access-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.access-badge.public { background: rgba(74,222,128,0.12); color: #4ade80; }
+.access-badge.private { background: rgba(255,107,53,0.12); color: var(--accent2); }
+
+@media (max-width: 600px) {
+  .dashboard { padding: 40px 20px 60px; }
+  .dash-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+}

@@ -1,0 +1,50 @@
+.not-found {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  text-align: center;
+}
+.nf-code {
+  font-family: var(--font-mono);
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: -0.05em;
+}
+.nf-title {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.nf-sub {
+  color: var(--text-dim);
+  font-size: 15px;
+  margin-bottom: 36px;
+}
+.nf-sub code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  background: var(--bg3);
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: var(--accent2);
+}
+.nf-home {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  transition: all var(--transition);
+  display: inline-block;
+}
+.nf-home:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(232,255,71,0.06);
+}
