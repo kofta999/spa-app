@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <h1 className="hero-title">
           <span className="title-line">STATIC</span>
-          <span className="title-line accent">SPA</span>
+          <span className="title-line accent">ITI</span>
           <span className="title-line">TEMPLATE</span>
         </h1>
         <p className="hero-sub">
