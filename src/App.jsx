@@ -30,7 +30,7 @@ function App() {
         </Routes>
       </main>
       <footer className="footer">
-        <span className="footer-mono">RUSTFS SPA TEST — {new Date().getFullYear()} ENV: {import.meta.env.VITE_MY_VAR}</span>
+        <span className="footer-mono">RUSTFS SPA TEST　こんばんは　— {new Date().getFullYear()} ENV: {import.meta.env.VITE_MY_VAR}</span>
         
         <span className="footer-route">PATH: {location.pathname} koftas here</span>
       </footer>
